@@ -1,15 +1,14 @@
-﻿using Esri.ArcGISRuntime.Geometry;
+﻿using System.Linq;
+using System.Windows.Input;
+
+using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
+
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Input;
+
 using Xamarin.Forms;
 
 namespace DevSummitCol19Demo.ViewModels
@@ -19,6 +18,7 @@ namespace DevSummitCol19Demo.ViewModels
     private Map _map;
     private GraphicsOverlayCollection _graphicOverlyaCollection;
     private Viewpoint _newViewpoint;
+    private Viewpoint _actualViewpoint;
 
     /// <summary>
     /// 
@@ -50,6 +50,15 @@ namespace DevSummitCol19Demo.ViewModels
     /// <summary>
     /// 
     /// </summary>
+    public Viewpoint ActualViewpoint
+    {
+      get => _actualViewpoint;
+      set => SetProperty(ref _actualViewpoint, value);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public ICommand AddGraphicsCommand { get; private set; }
 
     /// <summary>
@@ -61,6 +70,11 @@ namespace DevSummitCol19Demo.ViewModels
     /// 
     /// </summary>
     public ICommand ClearEventsCommand { get; private set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public ICommand UpdateViewpointCommand { get; private set; }
 
     /// <summary>
     /// 
@@ -77,7 +91,6 @@ namespace DevSummitCol19Demo.ViewModels
       Title = "Demo Nugets EsriDevSummit Colombia";
 
       Map = new Map(Basemap.CreateStreets());
-
       GraphicsOverlayCollection = new GraphicsOverlayCollection()
       {
         new GraphicsOverlay() { Id = "Hotel Cosmos 100"},
@@ -110,12 +123,34 @@ namespace DevSummitCol19Demo.ViewModels
 
       GraphicsOverlayCollection.First().Graphics.Add(graphic);
       GraphicsOverlayCollection.First().Graphics.Add(textGraphic);
-      Map.InitialViewpoint = new Viewpoint(CentralPoint, 5000);
+      var viewpoint = new Viewpoint(CentralPoint, 5000);
+
+      Map.InitialViewpoint = viewpoint;
+      NewViewpoint = Map.InitialViewpoint;
 
       AddGraphicsCommand = new DelegateCommand<MapPoint>(AddGraphicsAction);
       ClearEventsCommand = new DelegateCommand(ClearEventsAction);
       CenterMapCommand = new DelegateCommand(CenterMapAction);
+      UpdateViewpointCommand = new DelegateCommand<Viewpoint>(UpdateViewpoint);
 
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="viewpoint"></param>
+    private void UpdateViewpoint(Viewpoint viewpoint)
+    {
+      if(viewpoint != null)
+      {
+        ActualViewpoint = viewpoint.TargetGeometry is MapPoint ?
+          new Viewpoint(
+            GeometryEngine.Project(viewpoint.TargetGeometry, SpatialReferences.Wgs84) as MapPoint,
+            viewpoint.TargetScale) :
+          new Viewpoint(
+            GeometryEngine.Project(viewpoint.TargetGeometry, SpatialReferences.Wgs84),
+            viewpoint.Camera);
+      }
     }
 
     /// <summary>
