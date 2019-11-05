@@ -39,15 +39,21 @@
                    WidthRequest="200"
                    HeightRequest="100">
         <Label Text="{Binding ActualViewpoint.TargetGeometry.XMin, 
-          Converter={StaticResource GeographicCoordinateConverter},
-          ConverterParameter='X',
-          StringFormat='XMin = {0}'}" />
-        <Label Text="{Binding ActualViewpoint.TargetGeometry.YMin,Converter={StaticResource GeographicCoordinateConverter},
-ConverterParameter='Y',StringFormat='YMin = {0}'}" />
-        <Label Text="{Binding ActualViewpoint.TargetGeometry.XMax,Converter={StaticResource GeographicCoordinateConverter},
-ConverterParameter='X',StringFormat='XMax = {0}'}" />
-        <Label Text="{Binding ActualViewpoint.TargetGeometry.YMax,Converter={StaticResource GeographicCoordinateConverter},
-ConverterParameter='Y',StringFormat='YMax = {0}'}" />
+                              Converter={StaticResource GeographicCoordinateConverter},
+                              ConverterParameter='X',
+                              StringFormat='XMin = {0}'}" />
+        <Label Text="{Binding ActualViewpoint.TargetGeometry.YMin,
+                              Converter={StaticResource GeographicCoordinateConverter},
+                              ConverterParameter='Y',
+                              StringFormat='YMin = {0}'}" />
+        <Label Text="{Binding ActualViewpoint.TargetGeometry.XMax,
+                              Converter={StaticResource GeographicCoordinateConverter},
+                              ConverterParameter='X',
+                              StringFormat='XMax = {0}'}" />
+        <Label Text="{Binding ActualViewpoint.TargetGeometry.YMax,
+                              Converter={StaticResource GeographicCoordinateConverter},
+                              ConverterParameter='Y',
+                              StringFormat='YMax = {0}'}" />
       </StackLayout>
     </Grid>
     <StackLayout Grid.Row="1"
@@ -57,11 +63,13 @@ ConverterParameter='Y',StringFormat='YMax = {0}'}" />
               Margin="5"
               BackgroundColor="DarkGray"
               TextColor="White"
+              HeightRequest="30"
               Command="{Binding CenterMapCommand}" />
       <Button x:Name="BotonBorrar"
               Text="Borrar"
               Margin="5"
               BackgroundColor="DarkGray"
+              HeightRequest="30"
               TextColor="White"
               Command="{Binding ClearEventsCommand}" />
     </StackLayout>
