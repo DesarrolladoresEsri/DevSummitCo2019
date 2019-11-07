@@ -4,8 +4,8 @@
              xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
              xmlns:bh="clr-namespace:EsriCo.ArcGISRuntime.Xamarin.Forms.Behaviors;assembly=EsriCo.ArcGISRuntime.Xamarin.Forms"
              xmlns:cv="clr-namespace:EsriCo.ArcGISRuntime.Xamarin.Forms.Converters;assembly=EsriCo.ArcGISRuntime.Xamarin.Forms"
-             x:Class="DevSummitCol19Demo.Views.MainPage"
              xmlns:prismBh="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             x:Class="DevSummitCol19Demo.Views.MainPage"
              Title="{Binding Title}">
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -57,6 +57,7 @@
       </StackLayout>
     </Grid>
     <StackLayout Grid.Row="1"
+                 HorizontalOptions="CenterAndExpand"
                  Orientation="Horizontal">
       <Button x:Name="BotonCentrar"
               Text="Centrar"
