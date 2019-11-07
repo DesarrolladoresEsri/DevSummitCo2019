@@ -65,12 +65,14 @@
               BackgroundColor="DarkGray"
               TextColor="White"
               HeightRequest="40"
+              WidthRequest="100"
               Command="{Binding CenterMapCommand}" />
       <Button x:Name="BotonBorrar"
               Text="Borrar"
               Margin="5"
               BackgroundColor="DarkGray"
               HeightRequest="40"
+              WidthRequest="100"
               TextColor="White"
               Command="{Binding ClearEventsCommand}" />
     </StackLayout>
