@@ -7,6 +7,12 @@
              xmlns:prismBh="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              x:Class="DevSummitCol19Demo.Views.MainPage"
              Title="{Binding Title}">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <On Platform="iOS"
+          Value="0,0,0,20" />
+    </OnPlatform>
+  </ContentPage.Padding>
   <ContentPage.Resources>
     <ResourceDictionary>
       <cv:GeographicCoordinateConverter x:Key="GeographicCoordinateConverter" />
