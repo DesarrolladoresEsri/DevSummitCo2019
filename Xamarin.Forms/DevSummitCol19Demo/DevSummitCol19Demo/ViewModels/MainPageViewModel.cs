@@ -11,8 +11,12 @@ using Prism.Navigation;
 
 using Xamarin.Forms;
 
+/// <summary>
+/// 
+/// </summary>
 namespace DevSummitCol19Demo.ViewModels
 {
+
   public class MainPageViewModel : ViewModelBase
   {
     private Map _map;
@@ -141,7 +145,7 @@ namespace DevSummitCol19Demo.ViewModels
     /// <param name="viewpoint"></param>
     private void UpdateViewpoint(Viewpoint viewpoint)
     {
-      if(viewpoint != null)
+      if (viewpoint != null)
       {
         ActualViewpoint = viewpoint.TargetGeometry is MapPoint ?
           new Viewpoint(
@@ -195,6 +199,5 @@ namespace DevSummitCol19Demo.ViewModels
     {
       NewViewpoint = new Viewpoint(CentralPoint, 5000);
     }
-
   }
 }
