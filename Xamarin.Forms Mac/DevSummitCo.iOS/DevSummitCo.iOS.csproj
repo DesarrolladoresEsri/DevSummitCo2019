@@ -134,7 +134,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\DevSummitCo\DevSummitCo.csproj">
-      <Project>{C87922B8-1305-4DE1-8C7C-FE361CE2505C}</Project>
+      <Project>{A0483BBC-4DE1-40CB-8834-F069AB4FD493}</Project>
       <Name>DevSummitCo</Name>
     </ProjectReference>
   </ItemGroup>
