@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/user150058/Projects/DevSummitCo2019Mac/DevSummitCo.UITests/DevSummitCo.UITests.csproj": {}
+  },
+  "projects": {
+    "/Users/user150058/Projects/DevSummitCo2019Mac/DevSummitCo.UITests/DevSummitCo.UITests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/user150058/Projects/DevSummitCo2019Mac/DevSummitCo.UITests/DevSummitCo.UITests.csproj",
+        "projectName": "DevSummitCo.UITests",
+        "projectPath": "/Users/user150058/Projects/DevSummitCo2019Mac/DevSummitCo.UITests/DevSummitCo.UITests.csproj",
+        "packagesPath": "/Users/user150058/.nuget/packages/",
+        "outputPath": "/Users/user150058/Projects/DevSummitCo2019Mac/DevSummitCo.UITests/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/user150058/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "Esri.ArcGISRuntime.Xamarin.Forms": {
+              "target": "Package",
+              "version": "[100.6.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "Prism.Unity.Forms": {
+              "target": "Package",
+              "version": "[7.2.0.1367, )"
+            },
+            "Xamarin.UITest": {
+              "target": "Package",
+              "version": "[3.0.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
