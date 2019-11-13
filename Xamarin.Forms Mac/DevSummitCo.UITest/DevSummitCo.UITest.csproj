@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Esri.ArcGISRuntime.Xamarin.Forms" Version="100.6.0" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1367" />
+    <PackageReference Include="Xamarin.UITest" Version="3.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DevSummitCo.Android\DevSummitCo.Android.csproj" />
+    <ProjectReference Include="..\DevSummitCo.iOS\DevSummitCo.iOS.csproj" />
+  </ItemGroup>
+
+</Project>
